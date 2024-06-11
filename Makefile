@@ -45,10 +45,6 @@ publish: build # Build the project and upload to PyPI
 install: install_deps # Install the package
 	. $(VENV_DIR)/bin/activate && poetry install
 
-# Uninstall
-uninstall: # Uninstall the package
-	. $(VENV_DIR)/bin/activate && poetry uninstall todo-client
-
 # Clean target
 clean: # Remove build artifacts
 	rm -rf dist/
@@ -68,7 +64,7 @@ help: # Display this help message
 all: build
 
 # Main targets
-.PHONY: all build clean docs install help format publish test uninstall
+.PHONY: all build clean docs install help format publish test
 
 # Secondary targets
 .PHONY: activate apidoc clean_all create_venv install_deps

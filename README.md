@@ -1,19 +1,22 @@
-# Example Package
+# todo-client
 
-This is a simple example package. You can use
-[GitHub-flavored Markdown](https://guides.github.com/features/mastering-markdown/)
-to write your content.
+[![PyPI version](https://badge.fury.io/py/todo-client.svg)](https://badge.fury.io/py/todo-client)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-This package is designed to provide [describe functionality]. It's perfect for [describe target audience] and can help
-you to [describe benefits].
+> Simple To-Do List Manager
+
+A simple command-line interface (CLI) application to manage your to-do list.
 
 ## Table of Contents
 
-- [Example Package](#example-package)
-    - [Project Structure](#project-structure)
+- [todo-client](#todo-client)
+    - [Features](#features)
+    - [Requirements](#requirements)
+    - [Setup](#setup)
+    - [Usage](#usage)
+        - [Commands](#commands)
     - [Installation](#installation)
     - [Usage](#usage)
-    - [Setup](#setup)
     - [Build Instructions](#build-instructions)
         - [Commands](#commands)
     - [Changelog](#changelog)
@@ -21,11 +24,86 @@ you to [describe benefits].
     - [Contributing](#contributing)
     - [License](#license)
 
+## Features
+
+- Add a new task
+- Remove a task by index
+- Mark a task as done by index
+- List all tasks
+- Clear all tasks
+- Optionally specify the to-do list file
+- Enter REPL mode
+
+## Requirements
+
+- Python 3.7+
+- `make` utility
+
+## Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/rmkane/todo-cli.git
+   cd todo-cli
+   ```
+
+2. Create a virtual environment and install dependencies:
+   ```bash
+   ./install.sh
+   ```
+
+## Usage
+
+The CLI supports the following commands:
+
+```bash
+todo-cli {add,remove,list,clear,done} [--file FILE] [--repl]
+```
+
+### Commands
+
+- **add**: Add a new task
+   ```bash
+   todo add "Your new task"
+   ```
+
+- **remove**: Remove a task by index
+   ```bash
+   todo remove 1
+   ```
+
+- **done**: Mark a task as done by index
+   ```bash
+   todo done 1
+   ```
+
+- **list**: List all tasks
+   ```bash
+   todo list
+   ```
+
+- **clear**: Clear all tasks
+   ```bash
+   todo clear
+   ```
+
+### Optional Arguments
+
+- **--file FILE**: Specify the to-do list file
+   ```bash
+   todo list --file mytasks.txt
+   ```
+
+- **--repl**: Enter REPL (Read-Eval-Print Loop) mode
+   ```bash
+   todo --repl
+   ```
+
 ## Installation
 
 To install this package, you can clone the repository using the following command:
 
-```sh
+```shell
 git clone https://github.com/rmkane/packaging_tutorial.git
 ```
 
@@ -52,19 +130,6 @@ from todo_client.example import add_one
 print(add_one(1))  # 2
 ```
 
-## Setup
-
-Configure the TestPyPI repository and token:
-
-```sh
-poetry config repositories.test-pypi https://test.pypi.org/legacy/
-poetry config pypi-token.test-pypi <your-token>
-```
-
-On macOS, the file is located at `~/Library/Application\ Support/pypoetry/config.toml`
-
-Source: [_using python-poetry to publish to test.pypi.org_](https://stackoverflow.com/a/72524326/1762224)
-
 ## Build Instructions
 
 This project uses a Makefile for managing build tasks. Here are some of the commands you can use:
@@ -82,68 +147,6 @@ This project uses a Makefile for managing build tasks. Here are some of the comm
 - `make clean`: Removes build artifacts.
 - `make clean_all`: Removes the virtual environment, build artifacts, and `__pycache__` directories.
 - `make help`: Shows available make targets.
-
-### Commands
-
-1. **Create Virtual Environment and Install Poetry**:
-    ```sh
-    make create_venv
-    ```
-
-2. **Activate Virtual Environment**:
-    ```sh
-    make activate
-    ```
-
-3. **Install Project Dependencies**:
-    ```sh
-    make install_deps
-    ```
-
-4. **Build the Project**:
-    ```sh
-    make build
-    ```
-
-5. **Publish to TestPyPI**:
-    ```sh
-    make publish
-    ```
-
-6. **Run Tests**:
-    ```sh
-    make test
-    ```
-
-7. **Format Code**:
-    ```sh
-    make format
-    ```
-
-8. **Generate Sphinx .rst Files**:
-    ```sh
-    make apidoc
-    ```
-
-9. **Build Sphinx Documentation**:
-    ```sh
-    make docs
-    ```
-
-10. **Clean Project**:
-    ```sh
-    make clean
-    ```
-
-11. **Clean All Generated Files**:
-    ```sh
-    make clean_all
-    ```
-
-12. **Show Available Make Targets**:
-    ```sh
-    make help
-    ```
 
 Remember to run `source .venv/bin/activate` to activate the virtual environment before running the build commands.
 

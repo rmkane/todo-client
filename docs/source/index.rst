@@ -1,5 +1,5 @@
-Welcome to example_package_rmkane's documentation!
-==================================================
+Welcome to todo_client's documentation!
+=======================================
 
 .. toctree::
    :maxdepth: 2

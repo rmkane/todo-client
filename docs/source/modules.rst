@@ -1,7 +1,9 @@
-todo-client
-======================
+todo_client
+===========
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 2
+   :caption: Contents:
 
    todo_client
+   todo_client.core
