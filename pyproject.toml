@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "todo-client"
-version = "0.0.1"
+version = "0.1.0"
 description = "A todo client with CLI and REPL interfaces."
 authors = ["Ryan Kane <rmkane@proton.me>"]
 readme = "README.md"
