@@ -36,7 +36,7 @@ A simple command-line interface (CLI) application to manage your to-do list.
 
 ## Requirements
 
-- Python 3.7+
+- Python 3.9+
 - `make` utility
 
 ## Setup
@@ -57,7 +57,7 @@ A simple command-line interface (CLI) application to manage your to-do list.
 The CLI supports the following commands:
 
 ```bash
-todo-cli {add,remove,list,clear,done} [--file FILE] [--repl]
+todo {add,remove,list,clear,done} [--file FILE] [--repl]
 ```
 
 ### Commands

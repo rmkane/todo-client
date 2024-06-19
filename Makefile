@@ -15,7 +15,7 @@ activate: create-venv # Activate the virtual environment
 
 # Install project dependencies using Poetry
 install-deps: activate # Install project dependencies using Poetry
-	. $(VENV_DIR)/bin/activate && poetry install --with dev
+	. $(VENV_DIR)/bin/activate && poetry install --no-root --with dev
 
 # Format code
 format: install-deps # Format code using Black
@@ -35,6 +35,7 @@ apidoc: install-deps # Generate Sphinx .rst files from source code
 
 # Build Sphinx documentation
 docs: apidoc # Build Sphinx HTML documentation
+	mkdir -p ./docs/source/_static
 	. $(VENV_DIR)/bin/activate && poetry run sphinx-build -b html docs/source docs/_build
 
 # Upload to PyPI
